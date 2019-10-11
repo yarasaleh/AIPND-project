@@ -15,6 +15,7 @@ def main():
     with open(args.categories , 'r') as f:
         cat_to_name = json.load(f)
     probabilities = predict(args.input,model,args.cuda,topk=int(args.top_K))
+    #the follwing codes in the comments are possible but they messed up the results
     #print([cat_to_name[x] for x in classes])
     #print(cat_to_name[classes[0, x]] for x in range(4))
     a = np.array(probabilities[0][0])
